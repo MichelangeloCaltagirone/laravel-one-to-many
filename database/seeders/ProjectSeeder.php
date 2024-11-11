@@ -33,12 +33,12 @@ class ProjectSeeder extends Seeder
         //     ],
         // ];
 
-        $categories = Category::all()->pluck("id");
+        $categoryIds = Category::all()->pluck("id");
 
         for($i = 0; $i < 100; $i++) {
             $newProject = new Project();
             $newProject->name = $faker->firstName();
-            $newProject->category_id = $faker->randomElement($categories);
+            $newProject->category_id = $faker->randomElement($categoryIds);
             $newProject->author = $faker->firstName() .' '. $faker->unique()->lastName();
             $newProject->description = $faker->realTextBetween(150, 450);
             $newProject->save();
