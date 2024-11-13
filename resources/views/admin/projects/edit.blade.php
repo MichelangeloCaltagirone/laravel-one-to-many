@@ -19,6 +19,27 @@
         </div>
 
         <div class="my-1">
+            <label for="project-category-id" class="form-label ps-2">Scegli Categoria:</label>
+            <select id="project-category-id" name="category_id" class="form-control">
+                @foreach ($categories as $category )
+                    <option value="{{ $category->id }}"
+                        @if($category->id == old("category_id", $project->category_id))
+                            selected
+                        @endif
+                        >
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+
+            @error("category_id")
+                <div class="alert alert-warning">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="my-1">
             <label for="project-author" class="form-label ps-2">Nome Autore:</label>
             <input type="text" class="form-control" id="project-author" name="author"
             value="{{ old('author', $project->author) }}">

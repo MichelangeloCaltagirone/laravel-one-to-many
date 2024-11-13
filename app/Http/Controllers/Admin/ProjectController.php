@@ -81,6 +81,7 @@ class ProjectController extends Controller
 
         $project = Project::findOrFail($id);
         $project->name = $newData["name"];
+        $project->category_id = $newData["category_id"];
         $project->author = $newData["author"];
         $project->description = $newData["description"];
 
