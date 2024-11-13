@@ -23,6 +23,7 @@ class StoreProjectsRequest extends FormRequest
     {
         return [
             "name" => "required|string|min:2|max:30",
+            "category_id" => "required|numeric|integer|exists:categories,id",
             "description" => "required|string|min:20",
             "author" => "required|string|min:2|max:50"
         ];
