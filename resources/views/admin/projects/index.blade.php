@@ -7,8 +7,9 @@
     <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Id</th>
             <th scope="col">Project Name</th>
+            <th scope="col">Category</th>
             <th scope="col">Author Name</th>
             <th scope="col">Description</th>
             <th scope="col">Operations</th>
@@ -18,8 +19,9 @@
         <tbody>
             @forelse ($projects as $project)
             <tr>
-                <th scope="row">{{ $project->id }}</th>
+                <td>{{ $project->id }}</td>
                 <td>{{ $project->name }}</td>
+                <td>{{ $project->category->name }}</td>
                 <td>{{ $project->author }}</td>
                 <td>{{ $project->description }}</td>
                 <td>
