@@ -6,6 +6,7 @@
         <div class="card p-1">
             <span>{{ $project->id }} </span>
             <h2>Nome progetto: {{ $project->name }} </h2>
+            <h3>Categoria: {{ $project->category->name }}</h3>
             <h3>Autore: {{ $project->author }} </h3>
             <p>
                 <strong>Descrizione:</strong>
